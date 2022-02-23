@@ -13,7 +13,7 @@ class StoryCell: UICollectionViewCell{
     
     private lazy var profileImage: UIImageView = {
         let view = UIImageView()
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = 20
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.red.cgColor
         view.clipsToBounds = true

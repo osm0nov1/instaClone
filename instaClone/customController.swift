@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class CustomStoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class CustomStoryCollectionView: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     private var totalArray: [InstaModel] = [
         InstaModel(name: "Санса Старк", profileImage: "image1"),

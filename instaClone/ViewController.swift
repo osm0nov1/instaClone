@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         view.delegate = self
         view.dataSource = self
         view.register(LentaCell.self, forCellWithReuseIdentifier: "LentaCell")
-        view.register(CustomStoryCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CustomStoryCell")
+        view.register(CustomStoryCollectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CustomStoryCell")
         return view
     }()
     
@@ -110,12 +110,12 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CustomStoryCell", for: indexPath) as! CustomStoryCell
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CustomStoryCell", for: indexPath) as! CustomStoryCollectionView
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width / 3)
+        return CGSize(width: view.frame.width, height: view.frame.width / 4)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -126,7 +126,7 @@ extension ViewController:UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.width)
     }
     
 }
